@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-hand: 'Caveat', cursive;
+
+    /* Theme: Dark (Default Masculine, Bold, Modern) */
+    --bg-primary: #0B0F14;          /* Latar utama hitam kebiruan */
+    --bg-card: #121821;             /* Latar kartu & navbar */
+    --bg-card-muted: #161F2C;       /* Latar kartu hover / sekunder */
+    --bg-card-elevated: #1A2433;    /* Latar modal / popover */
+    --border-primary: #1F2937;      /* Border utama */
+    --border-subtle: #2A3749;       /* Border pemisah */
+
+    --text-primary: #E5E7EB;        /* Teks utama (kontras tinggi, WCAG AAA) */
+    --text-secondary: #9CA3AF;      /* Teks sekunder (WCAG AA 4.5:1+) */
+    --text-muted: #6B7280;          /* Teks redup */
+
+    /* Aksen */
+    --accent-primary: #3B82F6;      /* Biru baja / Steel blue */
+    --accent-primary-hover: #2563EB;
+    --accent-primary-glow: rgba(59, 130, 246, 0.32);
+    --accent-primary-subtle: rgba(59, 130, 246, 0.14);
+
+    --accent-secondary: #F59E0B;    /* Amber maskulin */
+    --accent-secondary-hover: #D97706;
+    --accent-secondary-glow: rgba(245, 158, 11, 0.28);
+    --accent-secondary-subtle: rgba(245, 158, 11, 0.14);
+
+    --accent-emerald: #10B981;      /* Emerald */
+    --accent-emerald-subtle: rgba(16, 185, 129, 0.14);
+
+    /* Latar Foto & Mockup */
+    --photo-bg-start: #1E293B;      /* Slate */
+    --photo-bg-end: #0F172A;        /* Dark Slate */
+    --mockup-header-bg: #151D28;
+    --footer-wave-bg: #0E141D;
+
+    /* Section Blobs */
+    --blob-exp-bg: #131A24;
+    --blob-exp-border: #1F2C3D;
+    --blob-edu-bg: #141C27;
+    --blob-edu-border: #202E41;
+    --blob-skills-bg: #16202D;
+    --blob-skills-border: #243449;
+  }
+
+  /* Mode Terang (jika diaktifkan: abu-abu putih #F3F4F6 tanpa krem) */
+  [data-theme="light"] {
+    --bg-primary: #F3F4F6;
+    --bg-card: #FFFFFF;
+    --bg-card-muted: #F9FAFB;
+    --bg-card-elevated: #FFFFFF;
+    --border-primary: #E5E7EB;
+    --border-subtle: #D1D5DB;
+
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --text-muted: #6B7280;
+
+    --accent-primary: #2563EB;
+    --accent-primary-hover: #1D4ED8;
+    --accent-primary-glow: rgba(37, 99, 235, 0.2);
+    --accent-primary-subtle: rgba(37, 99, 235, 0.08);
+
+    --accent-secondary: #D97706;
+    --accent-secondary-hover: #B45309;
+    --accent-secondary-glow: rgba(217, 119, 6, 0.2);
+    --accent-secondary-subtle: rgba(217, 119, 6, 0.08);
+
+    --accent-emerald: #059669;
+    --accent-emerald-subtle: rgba(5, 150, 105, 0.08);
+
+    --photo-bg-start: #334155;
+    --photo-bg-end: #1E293B;
+    --mockup-header-bg: #E2E8F0;
+    --footer-wave-bg: #E5E7EB;
+
+    --blob-exp-bg: #EAEFF6;
+    --blob-exp-border: #D1DCEB;
+    --blob-edu-bg: #ECEFF5;
+    --blob-edu-border: #D3DBE8;
+    --blob-skills-bg: #EBF0F8;
+    --blob-skills-border: #D2DDEB;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Subtle glow for Portfolio headline */
+.portfolio-headline-glow {
+  color: var(--accent-primary);
+  text-shadow: 0 0 28px var(--accent-primary-glow);
+}
+
+/* Organic blob border radii matching the reference shapes */
+.blob-experience {
+  border-radius: 44px 68px 52px 58px / 54px 48px 64px 46px;
+}
+
+.blob-education {
+  border-radius: 62px 48px 64px 46px / 48px 62px 50px 58px;
+}
+
+.blob-skills {
+  border-radius: 46px 64px 58px 44px / 52px 46px 66px 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
